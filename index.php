@@ -8278,53 +8278,7 @@ include 'components/connection.php';
             --section-background: 255, 255, 255;
           }
         </style>
-
-        <section class="section">
-          <div>
-            <div class="section__color-wrapper" style="color: #13becf">
-              <div class="container">
-                <div
-                  class="content-box content-box--medium content-box--text-center content-box--center text-container"
-                >
-                  <h3 class="heading h2">Happy Customers</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        id="shopify-section-template--15880464466141__1652853782fd2055cb"
-        class="shopify-section shopify-section--apps"
-      >
-        <div class=" ">
-          <div
-            id="shopify-block-b50961f1-c2a6-4366-ba4e-29d4973e26dd"
-            class="shopify-block shopify-app-block"
-          >
-            <div
-              class="loox-v2-carousel-container"
-              id="LOOX-V2_CAROUSEL-b50961f1-c2a6-4366-ba4e-29d4973e26dd"
-              data-widget="carousel"
-              data-slide-type="gallery"
-              data-max-width="1600"
-              data-border-radius="24"
-              data-items-per-view="5"
-              data-image-ratio="1.25"
-              data-reviewer-name-color="ffffff"
-              data-stars-color="ffffff"
-              data-arrows_background-color="ffffff"
-              data-arrows_icon-color="9a9a9a"
-              data-shadow="basic"
-              data-border_active="no"
-              data-border_width="2"
-              data-border_color="000000"
-              data-product-ids=""
-              data-customer-locale="en"
-            ></div>
-          </div>
-        </div>
-      </div>
+        
       <div
         id="shopify-section-template--15880464466141__newsletter"
         class="shopify-section shopify-section--newsletter"
