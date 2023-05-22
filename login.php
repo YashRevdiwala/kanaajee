@@ -5735,89 +5735,47 @@
         class="shopify-section shopify-section--main-customers-login"
       >
         <section>
-          <div class="container">
-            <div id="login-form-container">
-              <div class="page-header">
-                <div class="page-header__text-wrapper text-container">
-                  <h1 class="heading h2">Login</h1>
-                  <p>Please enter your e-mail and password:</p>
-                </div>
-              </div>
+          <div class="container"><div id="login-form-container">
+      <div class="page-header">
+        <div class="page-header__text-wrapper text-container">
+          <h1 class="heading h2">Login</h1>
+          <p>Please enter your e-mail and password:</p>
+        </div>
+      </div>
+      <div class="page-content page-content--small">
+        <div class="account__block-list"><div class="account__block-item" ><form method="post"  id="customer_login" accept-charset="UTF-8" data-login-with-shop-sign-in="true" name="login" class="form"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" /><div class="input">
+                      <input type="email" id="customer[email]" autocomplete="email" class="input__field" name="customer[email]" required="required" >
+                      <label for="customer[email]" class="input__label">E-mail</label>
+                    </div>
 
-              <div class="page-content page-content--small">
-                <div class="account__block-list">
-                  <div class="account__block-item">
-                    <form
-                      method="post"
-                      action="/account/login"
-                      id="customer_login"
-                      accept-charset="UTF-8"
-                      data-login-with-shop-sign-in="true"
-                      name="login"
-                      class="form"
-                    >
-                      <input
-                        type="hidden"
-                        name="form_type"
-                        value="customer_login"
-                      /><input type="hidden" name="utf8" value="✓" />
-                      <div class="input">
-                        <input
-                          type="email"
-                          id="customer[email]"
-                          autocomplete="email"
-                          class="input__field"
-                          name="customer[email]"
-                          required="required"
-                        />
-                        <label for="customer[email]" class="input__label"
-                          >E-mail</label
-                        >
-                      </div>
+                    <div class="input">
+                      <input type="password" id="customer[password]" class="input__field" name="customer[password]" required="required" autocomplete="current-password" >
+                      <label for="customer[password]" class="input__label">Password</label>
 
-                      <div class="input">
-                        <input
-                          type="password"
-                          id="customer[password]"
-                          class="input__field"
-                          name="customer[password]"
-                          required="required"
-                          autocomplete="current-password"
-                        />
-                        <label for="customer[password]" class="input__label"
-                          >Password</label
-                        >
+                      <button type="button" class="input__field-link link text--xsmall text--subdued" data-action="switch-login-form">Forgot password?</button>
+                    </div>
+               <button id="login-button" type="submit" is="loader-button" class="form__submit button button--primary button--full">Login</button>
 
-                        <button
-                          type="button"
-                          class="input__field-link link text--xsmall text--subdued"
-                          data-action="switch-login-form"
-                        >
-                          Forgot password?
-                        </button>
-                      </div>
-                      <button
-                        type="submit"
-                        is="loader-button"
-                        class="form__submit button button--primary button--full"
-                      >
-                        Login
-                      </button>
-                      <a
-                        href="otp-login.html"
-                        class="mt-2 button button--secondary button--full"
-                        >Login via OTP</a
-                      >
+ <a href="otp-login.html" class="mt-2 button button--secondary button--full">Login via OTP</a>
+                  
+                    <span class="form__secondary-action text--subdued">New customer?<a href="register.html" class="link">Create an account</a>
+                    </span></form></div></div>
+      </div>
+    </div><div id="recover-form-container" style="display: none">
+      <div class="page-header">
+        <div class="page-header__text-wrapper text-container">
+          <h1 class="heading h2">Recover password</h1><p>Please enter your e-mail:</p></div>
+      </div>
 
-                      <span class="form__secondary-action text--subdued"
-                        >New customer?<a href="register.php" class="link"
-                          >Create an account</a
-                        >
-                      </span>
-                    </form>
-                  </div>
-                </div>
-              </div>
+      <div class="page-content page-content--small"><form method="post" action="/account/recover"  accept-charset="UTF-8" name="recover" class="form"><input type="hidden" name="form_type" value="recover_customer_password" /><input type="hidden" name="utf8" value="✓" /><div class="input">
+              <input type="email" id="customer[recover_email]" class="input__field" name="email" required="required" >
+              <label for="customer[recover_email]" class="input__label">E-mail</label>
+            </div>
+
+            <button type="submit" is="loader-button" class="form__submit button button--primary button--full">Recover</button><span class="form__secondary-action text--subdued">Remember your password?<button type="button" class="link" data-action="switch-login-form">Back to login</button>
+            </span></form></div>
+    </div>
+  </div>
             </div>
             <div id="recover-form-container" style="display: none">
               <div class="page-header">
@@ -7589,5 +7547,48 @@
         });
       </script>
     </div>
+    
+    <style>
+  .input {
+    margin-bottom: 10px;
+  }
+  .input .input__field {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .input .input__field:not(:placeholder-shown){
+    font-size: 12px;
+    top: -20px;
+    left: 5px;
+    color: #333;
+  }
+  .input .input__field.error {
+    border-color: #ff0000;
+  }
+  .input .input__field.error {
+    color: #ff0000;
+  }
+  .input.invalid {
+    border-color: #ff0000;
+  }
+  .input.invalid {
+    color: #ff0000;
+  }
+
+  </style>
+
+
+ 
+
+ <script src="script.js"></script>
+ 
+ <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
   </body>
 </html>

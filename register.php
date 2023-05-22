@@ -2002,32 +2002,38 @@ for (var attr in meta) {
 
     <div class="page-content page-content--small">
       <div class="account__block-list">
-        <div class="account__block-item" >
-          <form method="post" action="/account" id="register-customer" accept-charset="UTF-8" data-login-with-shop-sign-up="true" name="create" class="form">
+        <div class="account__block-item">
+          <form method="post"  id="register-customer" accept-charset="UTF-8" data-login-with-shop-sign-up="true" name="create" class="form">
             <input type="hidden" name="form_type" value="create_customer" />
             <input type="hidden" name="utf8" value="✓" />
+  
             <div class="input">
-                      <input type="text" id="customer[first_name]" class="input__field" name="customer[first_name]" required="required" autocomplete="given-name" >
-                      <label for="customer[first_name]" class="input__label">First name</label>
-                    </div>
+              <input type="text" id="customer[first_name]" class="input__field" name="customer[first_name]" required="required" autocomplete="given-name">
+              <label for="customer[first_name]" class="input__label">First name</label>
+            </div>
+  
+            <div class="input">
+              <input type="text" id="customer[last_name]" class="input__field" name="customer[last_name]" required="required" autocomplete="family-name">
+              <label for="customer[last_name]" class="input__label">Last name</label>
+            </div>
+  
+            <div class="input">
+              <input type="email" id="customer[email]" class="input__field" name="customer[email]" required="required" autocomplete="email">
+              <label for="customer[email]" class="input__label">E-mail</label>
+            </div>
+  
+            <div class="input">
+              <input type="password" id="customer[password]" class="input__field" name="customer[password]" required="required" autocomplete="new-password">
+              <label for="customer[password]" class="input__label">Password</label>
+            </div>
+  
+            <button id="create-account-button" type="submit" is="loader-button" class="form__submit button button--primary button--full">Create account</button>
 
-                    <div class="input">
-                      <input type="text" id="customer[last_name]" class="input__field" name="customer[last_name]" required="required" autocomplete="family-name" >
-                      <label for="customer[last_name]" class="input__label">Last name</label>
-                    </div><div class="input">
-                    <input type="email" id="customer[email]" class="input__field" name="customer[email]" required="required" autocomplete="email" >
-                    <label for="customer[email]" class="input__label">E-mail</label>
-                  </div>
-
-                  <div class="input">
-                    <input type="password" id="customer[password]" class="input__field" name="customer[password]" required="required" autocomplete="new-password" >
-                    <label for="customer[password]" class="input__label">Password</label>
-                  </div>
-
-                  <button type="submit" is="loader-button" class="form__submit button button--primary button--full">Create account</button>
-
-                  <span class="form__secondary-action text--subdued">Already have an account?<a href="/account/login" class="link">Login</a>
-                  </span></form></div></div>
+  
+            <span class="form__secondary-action text--subdued">Already have an account? <a href="login.html" class="link">Login</a></span>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -3065,5 +3071,49 @@ setSourceCookie();
       });
     
   
- </script></div></body>
+ </script></div>
+ 
+ <style>
+  .input {
+    margin-bottom: 10px;
+  }
+  .input .input__field {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .input .input__field:not(:placeholder-shown){
+    font-size: 12px;
+    top: -20px;
+    left: 5px;
+    color: #333;
+  }
+  .input .input__field.error {
+    border-color: #ff0000;
+  }
+  .input .input__field.error {
+    color: #ff0000;
+  }
+  .input.invalid {
+    border-color: #ff0000;
+  }
+  .input.invalid {
+    color: #ff0000;
+  }
+
+  </style>
+
+
+ 
+
+ <script src="script.js"></script>
+ 
+ <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+ </body>
 </html>
