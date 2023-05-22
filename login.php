@@ -5697,10 +5697,10 @@
           <p>Your cart is empty</p>
 
           <div class="button-wrapper">
-            <a href="index.html" class="button button--primary"
+            <a href="index.php" class="button button--primary"
               >Start shopping</a
             >
-            <a href="cart.html" class="button button--primary">View Cart</a>
+            <a href="cart.php" class="button button--primary">View Cart</a>
           </div>
         </div>
         <openable-element id="mini-cart-note" class="mini-cart__order-note">
@@ -5743,22 +5743,27 @@
         </div>
       </div>
       <div class="page-content page-content--small">
-        <div class="account__block-list"><div class="account__block-item" ><form method="post"  id="customer_login" accept-charset="UTF-8" data-login-with-shop-sign-in="true" name="login" class="form"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" /><div class="input">
-                      <input type="email" id="customer[email]" autocomplete="email" class="input__field" name="customer[email]" required="required" >
+        <div class="account__block-list">
+          <div class="account__block-item" >
+            <form method="post" action="customer_login.php"  id="customer_login" accept-charset="UTF-8" data-login-with-shop-sign-in="true" name="login" class="form">
+              <input type="hidden" name="form_type" value="customer_login" />
+              <input type="hidden" name="utf8" value="✓" />
+                    <div class="input">
+                      <input type="email" id="customer[email]" autocomplete="off" class="input__field" name="email1" required="required" >
                       <label for="customer[email]" class="input__label">E-mail</label>
                     </div>
 
                     <div class="input">
-                      <input type="password" id="customer[password]" class="input__field" name="customer[password]" required="required" autocomplete="current-password" >
+                      <input type="password" id="customer[password]" class="input__field" name="password1" required="required" autocomplete="current-password" >
                       <label for="customer[password]" class="input__label">Password</label>
 
                       <button type="button" class="input__field-link link text--xsmall text--subdued" data-action="switch-login-form">Forgot password?</button>
                     </div>
                <button id="login-button" type="submit" is="loader-button" class="form__submit button button--primary button--full">Login</button>
 
- <a href="otp-login.html" class="mt-2 button button--secondary button--full">Login via OTP</a>
+ <a href="otp-login.php" class="mt-2 button button--secondary button--full">Login via OTP</a>
                   
-                    <span class="form__secondary-action text--subdued">New customer?<a href="register.html" class="link">Create an account</a>
+                    <span class="form__secondary-action text--subdued">New customer?<a href="register.php" class="link">Create an account</a>
                     </span></form></div></div>
       </div>
     </div><div id="recover-form-container" style="display: none">
