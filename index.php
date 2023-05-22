@@ -8104,13 +8104,13 @@ include 'components/connection.php';
                               data-media-id='31609845579997' sizes='(max-width:
                               740px) 52vw, calc(min(100vw - 80px, 1520px) / 4 -
                               18px)' height='2000' width='2000' alt=".$row['pro_name']."
-                              src='//cdn.shopify.com/s/files/1/0637/4834/1981/products/file_f5327d0d-3d6a-4208-bb34-ed260776135f.jpg?v=1680345086'
+                              src=".$imgpath,$row['photo1']."
                               '><img loading='lazy'
                               class='product-item__secondary-image'
                               sizes='(max-width: 740px) 52vw, calc(min(100vw -
                               80px, 1520px) / 4 - 18px)' height='2000'
                               width='2000' alt=".$row['pro_name']."
-                              src='//cdn.shopify.com/s/files/1/0637/4834/1981/products/file_520df737-338f-4385-b762-cf518cd9130c.jpg?v=1680345092'
+                              src=".$imgpath,$row['photo2']."
                               '></a
                             >
                             <div class='product-item__quick-form'>
