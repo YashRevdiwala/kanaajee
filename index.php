@@ -7196,17 +7196,17 @@ include 'components/connection.php';
                     <flickity-carousel
                       click-nav
                       flickity-config='{
-        "adaptiveHeight": true,
-        "dragThreshold": 10,
-        "initialIndex": ".is-initial-selected",
-        "fade": false,
-        "draggable": "&gt;1",
-        "contain": true,
-        "cellSelector": ".product__media-item:not(.is-filtered)",
-        "percentPosition": false,
-        "pageDots": false,
-        "prevNextButtons": false
-      }'
+                      "adaptiveHeight": true,
+                      "dragThreshold": 10,
+                      "initialIndex": ".is-initial-selected",
+                      "fade": false,
+                      "draggable": "&gt;1",
+                      "contain": true,
+                      "cellSelector": ".product__media-item:not(.is-filtered)",
+                      "percentPosition": false,
+                      "pageDots": false,
+                      "prevNextButtons": false
+                    }'
                       id="product-template--15880464466141__1651295720d6d36989-8036890083549-media-list"
                       class="product__media-list"
                       ><div
@@ -8278,7 +8278,7 @@ include 'components/connection.php';
             --section-background: 255, 255, 255;
           }
         </style>
-        
+
       <div
         id="shopify-section-template--15880464466141__newsletter"
         class="shopify-section shopify-section--newsletter"
