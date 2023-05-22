@@ -12,20 +12,20 @@ $(document).ready(function () {
   // Initialize form validation for register-customer form
   $("#register-customer").validate({
     rules: {
-      "customer[first_name]": {
+      first_name1: {
         required: true,
         regex: /^[A-Za-z\s]+$/,
       },
-      "customer[last_name]": {
+      last_name1: {
         required: true,
         regex: /^[A-Za-z\s]+$/,
       },
-      "customer[email]": {
+      email1: {
         required: true,
         email: true,
         regex: /^\S+@\S+\.\S+$/,
       },
-      "customer[password]": {
+      password1: {
         required: true,
         minlength: 8,
         maxlength: 20,
@@ -37,20 +37,20 @@ $(document).ready(function () {
       },
     },
     messages: {
-      "customer[first_name]": {
+      first_name1: {
         required: "Please enter your first name",
         regex: "Please enter a valid first name without whitespace",
       },
-      "customer[last_name]": {
+      last_name1: {
         required: "Please enter your last name",
         regex: "Please enter a valid last name without whitespace",
       },
-      "customer[email]": {
+      email1: {
         required: "Please enter your email",
         email: "Please enter a valid email address",
         regex: "Please enter a valid email address",
       },
-      "customer[password]": {
+      password1: {
         required: "Please enter a password",
         minlength: "Password must be at least 8 characters long",
         maxlength: "Password cannot exceed 20 characters",
@@ -100,12 +100,12 @@ $(document).ready(function () {
   // Initialize form validation for customer_login form
   $("#customer_login").validate({
     rules: {
-      "customer[email]": {
+      email1: {
         required: true,
         email: true,
         regex: /^\S+@\S+\.\S+$/,
       },
-      "customer[password]": {
+      password1: {
         required: true,
         minlength: 8,
         maxlength: 20,
@@ -113,12 +113,12 @@ $(document).ready(function () {
       },
     },
     messages: {
-      "customer[email]": {
+      email1: {
         required: "Please enter your email",
         email: "Please enter a valid email address",
         regex: "Please enter a valid email address without whitespace",
       },
-      "customer[password]": {
+      password1: {
         required: "Please enter a password",
         minlength: "Password must be at least 8 characters long",
         maxlength: "Password cannot exceed 20 characters",

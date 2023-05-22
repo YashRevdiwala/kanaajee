@@ -13,7 +13,7 @@ if(mysqli_num_rows($res_e) > 0){
     </script>";
 
 }else{
-    echo "<div id='invalidAuth' />
+    echo "<div id='invalidAuth'/>
     <script>
         window.location = 'login.php';
     </script>";
