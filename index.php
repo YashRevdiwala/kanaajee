@@ -7353,56 +7353,31 @@ include 'components/connection.php';
                     >
                       <div class="product__thumbnail-list hide-scrollbar">
                         <div class="product__thumbnail-list-inner">
-                          <button
-                            type="button"
-                            tabindex="-1"
-                            reveal
-                            class="product__thumbnail-item hidden-pocket"
-                            aria-current="true"
-                            aria-controls="product-template--15880464466141__1651295720d6d36989-31580871295197"
-                            data-media-id="31580871295197"
-                            data-action="select"
-                          >
-                            <div class="product__thumbnail">
-                              <img loading="lazy" sizes="(max-width: 999px)
-                              72px, 60px" height="2000" width="2000" alt="Peach
-                              Printed Pure Cotton Salwar Suit"
-                              src="//cdn.shopify.com/s/files/1/0637/4834/1981/products/file_ee741aff-e0df-4ff5-aa13-f703e5e73e0b.jpg?v=1679570674"
-                              ">
-                            </div></button
-                          ><button
-                            type="button"
-                            tabindex="-1"
-                            reveal
-                            class="product__thumbnail-item hidden-pocket"
-                            aria-controls="product-template--15880464466141__1651295720d6d36989-31580871327965"
-                            data-media-id="31580871327965"
-                            data-action="select"
-                          >
-                            <div class="product__thumbnail">
-                              <img loading="lazy" sizes="(max-width: 999px)
-                              72px, 60px" height="1200" width="1200" alt="Peach
-                              Printed Pure Cotton Salwar Suit"
-                              src="//cdn.shopify.com/s/files/1/0637/4834/1981/products/file_69e3d65e-f8a1-4ab7-b8e5-a9a2929858b3.jpg?v=1679570674"
-                              ">
-                            </div></button
-                          ><button
-                            type="button"
-                            tabindex="-1"
-                            reveal
-                            class="product__thumbnail-item hidden-pocket"
-                            aria-controls="product-template--15880464466141__1651295720d6d36989-31580871360733"
-                            data-media-id="31580871360733"
-                            data-action="select"
-                          >
-                            <div class="product__thumbnail">
-                              <img loading="lazy" sizes="(max-width: 999px)
-                              72px, 60px" height="2000" width="2000" alt="Peach
-                              Printed Pure Cotton Salwar Suit"
-                              src="//cdn.shopify.com/s/files/1/0637/4834/1981/products/file_eb62bc71-e920-40b7-a529-9b16fc5d96b2.jpg?v=1679570674"
-                              ">
-                            </div>
-                          </button>
+                        <?php
+                          $query= "SELECT * FROM tbl_imagetwo WHERE cat_name = 'Just For You'";
+                          $run_query = mysqli_query($conn,$query);
+
+                          while($row = mysqli_fetch_array($run_query)){
+                            echo "<button
+                              type='button'
+                              tabindex='-1'
+                              reveal
+                              class='product__thumbnail-item hidden-pocket'
+                              aria-current='true'
+                              aria-controls='product-template--15880464466141__1651295720d6d36989-31580871295197'
+                              data-action='select'
+                              
+                            >
+                              <div class='product__thumbnail'>
+                                <img loading='lazy' sizes='(max-width: 999px)
+                                72px, 60px' height='2000' width='2000' alt='Peach
+                                Printed Pure Cotton Salwar Suit'
+                                src=".$imgpath,$row['photo1']."
+                                '>
+                              </div>
+                            </button>";
+                          }
+                        ?>
                         </div>
                       </div>
                     </scroll-shadow>
