@@ -1938,8 +1938,8 @@ for (var attr in meta) {
       <p>Your cart is empty</p>
 
       <div class="button-wrapper">
-        <a href="index.html" class="button button--primary">Start shopping</a>
-        <a href="cart.html" class="button button--primary">View Cart</a>
+        <a href="index.php" class="button button--primary">Start shopping</a>
+        <a href="cart.php" class="button button--primary">View Cart</a>
       </div>
     </div><openable-element id="mini-cart-note" class="mini-cart__order-note">
       <span class="openable__overlay"></span>
@@ -1977,7 +1977,7 @@ for (var attr in meta) {
               <label for="customer_otp" class="input__label">Enter OTP</label>
             </div>
        <button is="loader-button" type="submit" class="form__submit button button--primary button--full"><span class="d-block">Verify Number</span><span class="d-none">Verify OTP</span></button>
-         <a href="login.html" class="mt-2 button button--secondary button--full">Login Via Username & Password</a>
+         <a href="login.php" class="mt-2 button button--secondary button--full">Login Via Username & Password</a>
       
             </form>
      <iframe src="" id="login_with_otp" scrolling="no" frameborder="0" width="1" height="1" style="display:none;"></iframe>

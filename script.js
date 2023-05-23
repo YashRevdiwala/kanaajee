@@ -92,7 +92,20 @@ $(document).ready(function () {
 
       // Check if the form is valid
       if ($(form).valid()) {
-        function1("account created successfully"); // Call the function1 with success message
+        // Save the form data in the database using an AJAX request
+        $.ajax({
+          type: "POST",
+          url: "register-customer.php",
+          data: $(form).serialize(), // Serialize the form data
+          success: function (response) {
+            // Call the function1 with success message
+            function1("account created successfully");
+          },
+          error: function (xhr, status, error) {
+            // Handle the error case
+            swal("Error", "An error occurred while saving the data.", "error");
+          },
+        });
       }
     },
   });
@@ -173,7 +186,7 @@ $(document).ready(function () {
 
   // Click event handler for the "Create Account" button
   $("#create-account-button").on("click", function (event) {
-    event.preventDefault(); // Prevent form submission
+    // Prevent form submission
 
     // Check if the register-customer form is valid
     if ($("#register-customer").valid()) {

@@ -1,26 +1,31 @@
-<?php 
+<?php
+// Include the database connection file
 include('components/connection.php');
 
+// Get the form data
 $email = $_POST['email1'];
-$name = $_POST['first_name1'];
-$lname = $_POST['last_name1'];
-$pass = $_POST['password1'];
-$name = $name." ".$lname;
-                
-$sql_e = "SELECT * FROM tbl_users WHERE email='$email'";
-$res_e = mysqli_query($conn, $sql_e);
+$firstName = $_POST['first_name1'];
+$lastName = $_POST['last_name1'];
+$password = $_POST['password1'];
+$firstName = $firstName." ".$lastName;
 
-if(mysqli_num_rows($res_e) > 0){
-  	$email_error = "Sorry... email already taken"; 
-    echo $email_error;	
-}else{
-           $query = "INSERT INTO tbl_users (name, email, password) 
-      	    	  VALUES ('$name', '$email', '$pass')";
+// Prepare and execute the SQL query
+$stmt = $conn->prepare("INSERT INTO tbl_users (name, email, password) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $firstName, $email, $password);
+$stmt->execute();
 
-           $result = mysqli_query($conn, $query);
+// Check if the query was successful
+if ($result) {
+    // Data inserted successfully
+    echo "Data saved in the database.";
+} else {
+    // Error occurred while saving data
+    echo "Error: " . $stmt->error;
 }
 
-
+// Close the statement and database connection
+$stmt->close();
+$conn->close();
 ?>
 
 <script>
