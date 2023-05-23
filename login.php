@@ -1,3 +1,14 @@
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+   header("Location:index.php");
+} else {
+   $email = '';
+};
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -5757,9 +5768,9 @@
                       <input type="password" id="customer[password]" class="input__field" name="password1" required="required" autocomplete="current-password" >
                       <label for="customer[password]" class="input__label">Password</label>
 
-                      <button type="button" class="input__field-link link text--xsmall text--subdued" data-action="switch-login-form">Forgot password?</button>
+                      <button type="button" name="submit_user" class="input__field-link link text--xsmall text--subdued" data-action="switch-login-form">Forgot password?</button>
                     </div>
-               <button id="login-button" type="submit" is="loader-button" class="form__submit button button--primary button--full">Login</button>
+               <button id="login-button" name="submit_user" type="submit" is="loader-button" class="form__submit button button--primary button--full">Login</button>
 
  <a href="otp-login.php" class="mt-2 button button--secondary button--full">Login via OTP</a>
                   
@@ -7587,7 +7598,7 @@
 
  
 
- <script src="script.js"></script>
+ <!-- <script src="script.js"></script> -->
  
  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
 

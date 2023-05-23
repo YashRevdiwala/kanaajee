@@ -1,4 +1,14 @@
-
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+  $email = $_SESSION['email1'];
+  $name = mysqli_query($conn,"SELECT * from tbl_users WHERE email = '$email' ");
+  $row = mysqli_fetch_array($name);
+} else {
+   $email = '';
+};
+?>
 <!doctype html><html class="no-js" lang="en" dir="ltr" >
   <head>
 	<!-- Added by AVADA SEO Suite -->
@@ -68,9 +78,9 @@ window.clevertapApp = {
             routes: {
                 customer: {
                     account: '/account',
-                    login: '/account/login',
-                    logout: '/account/logout',
-                    register: '/account/register'
+                    login: 'login.php',
+                    logout: 'logout.php',
+                    register: 'register.php'
                 },
                 cart: {
                     list: '/cart',
@@ -1956,8 +1966,8 @@ for (var attr in meta) {
       <p>Your cart is empty</p>
 
       <div class="button-wrapper">
-        <a href="index.html" class="button button--primary">Start shopping</a>
-        <a href="cart.html" class="button button--primary">View Cart</a>
+        <a href="index.php" class="button button--primary">Start shopping</a>
+        <a href="cart.php" class="button button--primary">View Cart</a>
       </div>
     </div><openable-element id="mini-cart-note" class="mini-cart__order-note">
       <span class="openable__overlay"></span>
@@ -1972,21 +1982,21 @@ for (var attr in meta) {
       <div class="link-bar__wrapper">
         <ul class="link-bar__linklist list--unstyled" role="list">
           <li class="link-bar__link-item">
-            <a href="profile.html" class="link-bar__link link--animated text--underlined">My Profile</a>
+            <a href="profile.php" class="link-bar__link link--animated text--underlined">My Profile</a>
           </li>
           <li class="link-bar__link-item">
-            <a href="/kalaajee/account.html" class="link-bar__link link--animated">Orders</a>
-          </li>
-
-          <li class="link-bar__link-item">
-            <a href="address.html" class="link-bar__link link--animated ">Addresses</a>
-          </li>
-          <li class="link-bar__link-item">
-            <a href="track-order.html" class="link-bar__link link--animated ">Track Order</a>
+            <a href="/kalaajee/account.php" class="link-bar__link link--animated">Orders</a>
           </li>
 
           <li class="link-bar__link-item">
-            <a href="/account/logout" class="link-bar__link link--animated text--subdued" data-no-instant>Logout</a>
+            <a href="address.php" class="link-bar__link link--animated ">Addresses</a>
+          </li>
+          <li class="link-bar__link-item">
+            <a href="track-order.php" class="link-bar__link link--animated ">Track Order</a>
+          </li>
+
+          <li class="link-bar__link-item">
+            <a href="logout.php" class="link-bar__link link--animated text--subdued" data-no-instant>Logout</a>
           </li>
         </ul>
       </div>
@@ -2012,18 +2022,18 @@ for (var attr in meta) {
 
     <div class="popover__content">
       <div class="popover__choice-list">
-        <a href="profile.html" class="popover__choice-item">
+        <a href="profile.php" class="popover__choice-item">
           <span class="popover__choice-label" aria-current="true">My Profile</span>
         </a>
-        <a href="/kalaajee/account.html" class="popover__choice-item">
+        <a href="/kalaajee/account.php" class="popover__choice-item">
           <span class="popover__choice-label">Orders</span>
         </a>
 
-        <a href="address.html" class="popover__choice-item">
+        <a href="address.php" class="popover__choice-item">
           <span class="popover__choice-label" >Addresses</span>
         </a>
 
-        <a href="login.html" class="popover__choice-item text--subdued" data-no-instant>
+        <a href="login.php" class="popover__choice-item text--subdued" data-no-instant>
           <span class="popover__choice-label">Logout</span>
         </a>
       </div>
@@ -2038,7 +2048,7 @@ for (var attr in meta) {
       </div>
 
       <div class="page-content">
-        <div class="account__block-list"><div class="account__block-item" ><div class="account__addresses-list"><div class="account__address"><span class="account__address-title heading heading--small">Default Information</span><div class="account__address-details"><p>Yash Sabhaya<br>Male<br>yashsabhaya964@gmail.com<br>8780346052<br>411-412, Rajhans Platinum Plaza, Palanpur Canal rd,Adajan<br>Surat<br>Gujarat<br>395009</p></div>
+        <div class="account__block-list"><div class="account__block-item" ><div class="account__addresses-list"><div class="account__address"><span class="account__address-title heading heading--small">Default Information</span><div class="account__address-details"><?php echo "<p>".$row['name']."<br>Male<br>".$email."<br>8780346052<br>411-412, Rajhans Platinum Plaza, Palanpur Canal rd,Adajan<br>Surat<br>Gujarat<br>395009</p>"; ?></div>
 
                           <div class="account__address-actions">
                             <button class="link text--subdued" is="toggle-button" aria-controls="drawer-address-8302380974301" aria-expanded="false">Edit</button>

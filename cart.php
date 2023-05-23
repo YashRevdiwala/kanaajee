@@ -1,3 +1,13 @@
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+} else {
+   $email = '';
+};
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr" >
   <head>

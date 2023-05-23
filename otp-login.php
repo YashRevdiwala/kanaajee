@@ -1,3 +1,12 @@
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+} else {
+   $email = '';
+};
+?>
 
 <!doctype html><html class="no-js" lang="en" dir="ltr" >
   <head>
@@ -1967,36 +1976,65 @@ for (var attr in meta) {
       <div class="page-header__text-wrapper text-container"><h1 class="heading h2">Login with OTP</h1></div>
     </div>
    <div class="page-content page-content--small rte"><span>If you have an account with us, please log in.</span><p id="otpError"></p>
-     <form id="otp_login"  method="post" class="mt-4 need_otp"> 
+     <form id="otp_login"  method="post" action="login-otp-auth.php" class="mt-4 need_otp"> 
         <div class="input">
               <input id="customer_phone" onkeypress="return isNumber(event,this,10)" required type="number" class="input__field " name="customer_phone" aria-label="customer_phone"  >
               <label for="customer_phone" class="input__label">Phone Number</label>
             </div>
         <div class="input customer_otp_container" style="display:none">
-              <input id="customer_otp" disabled required type="number" onkeypress="return isNumber(event,this,6)" class="input__field " name="customer_phone" aria-label="customer_phone"  >
+              <input id="customer_otp" disabled required type="number" onkeypress="return isNumber(event,this,6)" class="input__field " name="customer_otp" aria-label="customer_phone"  >
               <label for="customer_otp" class="input__label">Enter OTP</label>
             </div>
        <button is="loader-button" type="submit" class="form__submit button button--primary button--full"><span class="d-block">Verify Number</span><span class="d-none">Verify OTP</span></button>
          <a href="login.php" class="mt-2 button button--secondary button--full">Login Via Username & Password</a>
       
-            </form>
+      </form>
      <iframe src="" id="login_with_otp" scrolling="no" frameborder="0" width="1" height="1" style="display:none;"></iframe>
      </div> 
   </div> 
 </section>
 <script>
-    function isNumber(evt,val,limit) {
-        
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        } 
-        if(val.value.length > limit)
-          return false;
-                 
-        return true;
+    function isNumber(evt, val, limit) {
+    evt = evt || window.event;
+    var charCode = evt.which || evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
     }
+    if (val.value.length > limit) {
+        return false;
+    }
+    return true;
+}
+
+$("#otp_login").submit(function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    var phoneNumber = $("#customer_phone").val();
+
+    // Perform AJAX request to check phone number on the server-side
+    $.ajax({
+        type: "POST",
+        url: "check-phone-number.php",
+        data: { phoneNumber: phoneNumber },
+        success: function (response) {
+            if (response === "exists") {
+                // Phone number exists, allow login
+                $("#otp_login").attr("action", "login-otp-auth.php");
+                $("#customer_otp").prop("disabled", false);
+                $(".customer_otp_container").show();
+                $(".form__submit span:first-child").text("Verify OTP");
+                $("#otp_login").unbind("submit").submit();
+            } else {
+                // Phone number does not exist, show an error message or perform appropriate actions
+                alert("Phone number not found. Please register first.");
+            }
+        },
+        error: function () {
+            // Handle error case
+            alert("Error occurred. Please try again.");
+        }
+    });
+});
 </script>
 
 </div>

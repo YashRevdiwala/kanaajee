@@ -1,3 +1,13 @@
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+} else {
+   $email = '';
+};
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -5848,26 +5858,26 @@
               <div class="link-bar__wrapper">
                 <ul class="link-bar__linklist list--unstyled" role="list">
                   <li class="link-bar__link-item">
-                    <a href="profile.html" class="link-bar__link link--animated"
+                    <a href="profile.php" class="link-bar__link link--animated"
                       >My Profile</a
                     >
                   </li>
                   <li class="link-bar__link-item">
                     <a
-                      href="/kalaajee/account.html"
+                      href="/kalaajee/account.php"
                       class="link-bar__link link--animated text--underlined"
                       >Orders</a
                     >
                   </li>
 
                   <li class="link-bar__link-item">
-                    <a href="address.html" class="link-bar__link link--animated"
+                    <a href="address.php" class="link-bar__link link--animated"
                       >Addresses</a
                     >
                   </li>
                   <li class="link-bar__link-item">
                     <a
-                      href="track-order.html"
+                      href="track-order.php"
                       class="link-bar__link link--animated"
                       >Track Order</a
                     >
@@ -5875,7 +5885,7 @@
 
                   <li class="link-bar__link-item">
                     <a
-                      href="/account/logout"
+                      href="logout.php"
                       class="link-bar__link link--animated text--subdued"
                       data-no-instant
                       >Logout</a
@@ -5941,21 +5951,21 @@
 
             <div class="popover__content">
               <div class="popover__choice-list">
-                <a href="profile.html" class="popover__choice-item">
+                <a href="profile.php" class="popover__choice-item">
                   <span class="popover__choice-label">My Profile</span>
                 </a>
-                <a href="/kalaajee/account.html" class="popover__choice-item">
+                <a href="/kalaajee/account.php" class="popover__choice-item">
                   <span class="popover__choice-label" aria-current="true"
                     >Orders</span
                   >
                 </a>
 
-                <a href="address.html" class="popover__choice-item">
+                <a href="address.php" class="popover__choice-item">
                   <span class="popover__choice-label">Addresses</span>
                 </a>
 
                 <a
-                  href="login.html"
+                  href="login.php"
                   class="popover__choice-item text--subdued"
                   data-no-instant
                 >
@@ -5977,7 +5987,7 @@
                   </p>
 
                   <div class="button-wrapper">
-                    <a href="index.html" class="button button--primary"
+                    <a href="index.php" class="button button--primary"
                       >Start shopping</a
                     >
                   </div>

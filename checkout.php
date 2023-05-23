@@ -1,3 +1,12 @@
+<?php 
+include("components/connection.php");
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+} else {
+   $email = '';
+};
+?>
 
 <!DOCTYPE html>
 <html lang="en-IN" dir="ltr" class="no-js windows chrome desktop page--no-banner page--logo-main page--show page--show card-fields">

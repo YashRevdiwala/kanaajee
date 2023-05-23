@@ -1,6 +1,12 @@
 <?php
 // Include the database connection file
 include('components/connection.php');
+session_start();
+if (isset($_SESSION['email1'])) {
+   $email = $_SESSION['email1'];
+} else {
+   $email = '';
+};
 
 // Get the form data
 $email = $_POST['email1'];
