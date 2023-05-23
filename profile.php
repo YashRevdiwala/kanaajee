@@ -2388,7 +2388,7 @@ for (var attr in meta) {
           <form method="post" action="/account/addresses/8302380974301" id="address_form_8302380974301" accept-charset="UTF-8" class="form"><input type="hidden" name="form_type" value="customer_address" /><input type="hidden" name="utf8" value="✓" />
             <p class="form__info">Please fill in the fields below:</p><div class="input-row">
                 <div class="input">
-                  <input id="address-8302380974301[first_name]" type="text" class="input__field input__field--text is-filled" name="address[first_name]" value="Yash">
+                  <?php echo '<input id="address-8302380974301[first_name]" type="text" class="input__field input__field--text is-filled" name="address[first_name]" value='.$row['name'].'>'; ?>
                   <label for="address-8302380974301[first_name]" class="input__label">First name</label>
                 </div>
 
